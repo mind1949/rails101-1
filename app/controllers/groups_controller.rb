@@ -1,10 +1,7 @@
 class GroupsController < ApplicationController
+  before_action :authenticate_user!, only:[:new]
   def index
     @groups= Group.all
-  end
-
-  def show
-    @group=Group.find(params[:id])
   end
 
   def show
